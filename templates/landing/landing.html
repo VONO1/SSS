@@ -1,24 +1,66 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>hello maza fuck </title>
+    <title>Регистрация </title>
 
       <!-- Bootstrap-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,400&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'style.css' %}"
+
+
+
 
     <!-- Custom styles -->
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+
 
 
 
 </head>
 <body>
-<p>
-    MAZA FUCK {{ name }}
-</p>
+
+
+
+
+<div class="general-container">
+<div class="container top-container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h1 class="title">Регистрация</h1>
+            <h3 class="title">Введите данные</h3>
+            <div>
+                <form action="" method="post"  form-inline text-center> {% csrf_token %}
+
+                   <div class="form-group">
+                       <span class="label label-primary">Ваш Email</span><br>
+                       <input type="email" name="{{ form.email.name }}" class="form-control">
+                   </div>
+
+                    <div class="form-group">
+                        <span class="label label-primary">Ваше Ф.И.О.</span><br>
+                       <input type="text" name="{{ form.name.name }}" class="form-control">
+                   </div>
+
+                    <div class="form-group">
+                        <span class="label label-primary">Ваша должность</span><br>
+                       <input type="text" name="{{ form.rank.name }}" class="form-control">
+                   </div>
+                    <div>
+                        <button type="submit" class="btn  btn-primary">Отправить</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
 
  <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -28,3 +70,4 @@
 
 </body>
 </html>
+

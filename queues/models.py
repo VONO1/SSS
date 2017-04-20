@@ -9,8 +9,8 @@ class Queue(models.Model):
     #Последовательность согласования
     queue_test = [1,2,3]
     #Инициатор закупки
-    initiator = models.CharField(max_length=128)
-    #initiator = models.ForeignKey(Subscriber, blank=True, null=True, default=None)
+    initiator = models.CharField(max_length=128, blank=False,default=None)
+    initiatorr = models.ForeignKey(Subscriber, blank=True, null=True, default='hu')
     #Объект закупки
     initiator_obj = models.CharField(max_length=128)
     # Материально отвественный
@@ -24,7 +24,8 @@ class Queue(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return "Заказ на : %s от %s с id: %s" % (self.initiator_obj, self.initiator, self.id)
+        return "Заказ на : %s  с id: %s" % (self.initiator_obj,  self.id)
+        #return "Заказ на : %s от %s с id: %s" % (self.initiator_obj, self.initiator, self.id)
 
     class Meta:
         verbose_name = 'Queue'
@@ -44,7 +45,7 @@ class Queue_links(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return "Пользователь: %s с id: %s" % (self.name, self.id)
+        return "Очередь: %s с id: %s" % (self.q_links, self.q_applications)
 
     class Meta:
         verbose_name = 'User'

@@ -1,7 +1,7 @@
 from django.db import models
 #импортируем список пользователей
 from landing.models import Subscriber
-
+from applications.models import Unit
 
 
 #Свойства очереди
@@ -9,8 +9,8 @@ class Queue(models.Model):
     #Последовательность согласования
     queue_test = [1,2,3]
     #Инициатор закупки
-    initiator = models.CharField(max_length=128, blank=False,default=None)
-    initiatorr = models.ForeignKey(Subscriber, blank=True, null=True, default='hu')
+    #initiator = models.CharField(max_length=128, blank=False,default=None)
+    #initiatorr = models.ForeignKey(Subscriber, blank=True, null=True, default=None)
     #Объект закупки
     initiator_obj = models.CharField(max_length=128)
     # Материально отвественный
@@ -37,7 +37,10 @@ class Queue_links(models.Model):
     q_links = models.ForeignKey(Queue, blank=True, default=None)
 
     #Ссылка на звено согласования (состав очереди)
-    q_applications = models.ForeignKey(Subscriber, blank=True, default=None)
+    #q_applications = models.ForeignKey(Subscriber, blank=True, default=None)
+    q_applications2 = models.ForeignKey(Unit, blank=True, default=None)
+    #q_applications3 = models.ForeignKey(Unit, blank=True, default=None)
+    #q_applications3 = models.ForeignKey(Subscriber, blank=True, default="cht-to")
 
 
     #Вносим автоматически информацию, когда объект создаётся или изменяется
@@ -45,8 +48,8 @@ class Queue_links(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return "Очередь: %s с id: %s" % (self.q_links, self.q_applications)
+        return "Очередь: %s с id: %s" % (self.q_links, self.q_applications2)
 
     class Meta:
-        verbose_name = 'User'
+        verbose_name = 'Conference'
         verbose_name_plural = 'Conference'

@@ -1,8 +1,10 @@
 from django.db import models
 #Импортируем список сотрудников, подписанных на рассылки
 from landing.models import Subscriber
-#Импортируем очереди
-from queues.models import Queue
+
+
+
+
 
 #Статус заказа
 class Status(models.Model):
@@ -24,8 +26,8 @@ class Status(models.Model):
 
 #Изображение заявки
 class Order_img(models.Model):
-    image = models.ForeignKey(Queue, blank=True, null=True, default=None)
-    img = models.ImageField(upload_to='img/')
+    #image = models.ForeignKey(Queue, blank=True, null=True, default=None)
+    img = models.ImageField(upload_to='media/img')
 
 
     def __str__(self):
@@ -53,3 +55,4 @@ class Unit(models.Model):
     class Meta:
         verbose_name = 'Unit'
         verbose_name_plural = 'Units'
+

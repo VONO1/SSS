@@ -19,6 +19,8 @@ class Queue(models.Model):
     initiator_phone = models.CharField(max_length=128, blank=False,default=None)
     #состав заявки(пока текст) (в будущем заявка будет подгружаться отдельным файлом, а данное поле станет комментарием)
     comments = models.TextField(blank=True, null=True, default=None)
+    #Изображение
+    img = models.ImageField(upload_to='img/', blank=True, default=None)
     #Вносим автоматически информацию, когда объект создаётся или изменяется
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
@@ -39,6 +41,7 @@ class Queue_links(models.Model):
     #Ссылка на звено согласования (состав очереди)
     #q_applications = models.ForeignKey(Subscriber, blank=True, default=None)
     q_applications2 = models.ForeignKey(Unit, blank=True, default=None)
+
     #q_applications3 = models.ForeignKey(Unit, blank=True, default=None)
     #q_applications3 = models.ForeignKey(Subscriber, blank=True, default="cht-to")
 

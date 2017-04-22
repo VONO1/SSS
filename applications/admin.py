@@ -1,7 +1,9 @@
 from django.contrib import admin
 from .models import  *
 
-
+# class Img_line(admin.TabularInline):
+#     model = Order_img
+#     extra = 0
 
 class Order_imgAdmin (admin.ModelAdmin):
     list_display = [field.name for field in Order_img._meta.fields]
@@ -19,7 +21,7 @@ admin.site.register(Order_img, Order_imgAdmin)
 
 class UnitAdmin (admin.ModelAdmin):
     list_display = [field.name for field in Unit._meta.fields]
-
+    #inlines = [Img_line]
 
 
     # exclude = ["email"]

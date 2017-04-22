@@ -1,6 +1,6 @@
 from django.shortcuts import  render
 from .forms import SubscriberForm
-
+from queues.models import Queue_links
 
 def landing(request):
     name = 'pes'
@@ -11,3 +11,9 @@ def landing(request):
         data = form.cleaned_data
         new_form = form.save()
     return render(request, 'landing/landing.html', locals())
+
+
+
+def home(request):
+    Qu = Queue_links.objects.all()
+    return render(request, 'landing/home.html', locals())

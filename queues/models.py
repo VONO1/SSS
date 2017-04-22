@@ -35,6 +35,7 @@ class Queue(models.Model):
 
 #Состав очереди
 class Queue_links(models.Model):
+    #is_active = True
     #Ссылка на таблицу с очередями
     q_links = models.ForeignKey(Queue, blank=True, default=None)
 

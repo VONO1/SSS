@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="section-top">
+        <img src="{% static 'static_dev/img/bg.jpg' %}" class="img-responsive">
+    </div>
+    <div class="selection">
+        <div class="container">
+            <div class="row">
+            {% for Queue_linkss in Qu %}
+                <div class="col-lg-3">
+                    <div class="qu-item">
+                        <div> <center><img src="{% static 'static_dev/img/list.png' %}" class="img-responsive"></center></div>
+                        <h4>{{ Queue_linkss.q_links }}</h4>
+                        <p> {{ Queue_linkss.q_links }}</p>
+                        <div class="bt-read">
+                            <button class="btn btn-success">
+                                Ознакомиться
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

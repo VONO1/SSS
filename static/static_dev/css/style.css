@@ -5,9 +5,7 @@ html, body{
     background-color: gray;
 }
 
-.section-top{
-    margin: 20px;
-}
+
 
 .qu-item{
     height: 300px;
@@ -22,4 +20,14 @@ html, body{
     position: absolute;
     bottom: 15px;
     left: 60px;
+}
+
+.wrapper{
+    padding-bottom: 100px;
+}
+
+.footer{
+    margin-bottom: -100px;
+    background-color: white;
+    height: 200px;
 }

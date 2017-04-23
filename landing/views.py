@@ -16,4 +16,6 @@ def landing(request):
 
 def home(request):
     Qu = Queue_links.objects.all()
+    Qu_allq = Qu.filter(q_applications2__id=1)
+    Qu_meq = Qu.filter(q_applications2__id=1)
     return render(request, 'landing/home.html', locals())

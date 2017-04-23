@@ -51,8 +51,8 @@ class Unit(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        #return "юнит"
-        return "Статус : %s с состоянием: %s" % (self.user, self.status.is_active)
+        #возвращаем согласующего лица
+        return "%s" % (self.user)
 
     class Meta:
         verbose_name = 'Unit'

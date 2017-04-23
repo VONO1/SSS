@@ -1,3 +1,5 @@
+#ХО_ХО_ХО
+
 from django.db import models
 #импортируем список пользователей
 from landing.models import Subscriber
@@ -20,7 +22,7 @@ class Queue(models.Model):
     #состав заявки(пока текст) (в будущем заявка будет подгружаться отдельным файлом, а данное поле станет комментарием)
     comments = models.TextField(blank=True, null=True, default=None)
     #Изображение
-    img = models.ImageField(upload_to='img/', blank=True, default=None)
+    img = models.ImageField(upload_to='img/', blank=True, null=True, default="img/IMG_3366.JPG")
     #Вносим автоматически информацию, когда объект создаётся или изменяется
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
@@ -39,8 +41,11 @@ class Queue_links(models.Model):
     #Ссылка на таблицу с очередями
     q_links = models.ForeignKey(Queue, blank=True, default=None)
 
+
+
     #Ссылка на звено согласования (состав очереди)
     #q_applications = models.ForeignKey(Subscriber, blank=True, default=None)
+    #q_applications1 = models.ForeignKey(Unit, blank=True, default=None)
     q_applications2 = models.ForeignKey(Unit, blank=True, default=None)
 
     #q_applications3 = models.ForeignKey(Unit, blank=True, default=None)

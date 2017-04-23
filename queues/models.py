@@ -34,6 +34,7 @@ class Queue(models.Model):
     class Meta:
         verbose_name = 'Queue'
         verbose_name_plural = 'Queues'
+# множественный выбор очереди
 
 #Состав очереди
 class Queue_links(models.Model):

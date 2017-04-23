@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from django.contrib import admin
-from landing import views
+from queues import views
 
 urlpatterns = [
-    #url(r'^landing/', views.landing, name='landing')
+    url(r'^queue/(?P<queue_id>\w+)/$', views.queue, name='queue')
 ]

@@ -1,5 +1,10 @@
 from django.contrib import admin
 from .models import  *
+from applications.models import Unit
+
+
+
+
 
 
 
@@ -20,7 +25,6 @@ admin.site.register(Queue, QueueAdmin)
 
 class Queue_linksAdmin (admin.ModelAdmin):
     list_display = [field.name for field in Queue_links._meta.fields]
-
 
 
     # exclude = ["email"]

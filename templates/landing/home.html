@@ -6,10 +6,12 @@
         <img src="{% static 'static_dev/img/bg.jpg' %}" class="img-responsive">
     </div>
     <div class="section section1 allq-container">
+    <p><a name="aall"></a></p>
         <div class="container">
             <div class="row">
             <div class="col-lg12">
                 <h1 class="text-center">
+
                     Все заявки
                 </h1>
             </div>
@@ -38,12 +40,14 @@
             <div class="row">
                 <div class="col-lg12">
                     <h1 class="text-center">
+                         <p><a name="mmee"></a></p>
                         Заявки мне
                     </h1>
                 </div>
                 {% for Queue_linkss in Qu_meq %}
                     <div class="col-lg-3">
                         <div class="qu-item">
+                            <a href="{% url 'queue' Queue_linkss.q_links.id %}">
                             <div> <center><img src="{% static 'static_dev/img/list.png' %}" class="img-responsive"></center></div>
                             <h4>{{ Queue_linkss.q_links }}</h4>
                             <p> {{ Queue_linkss.q_links }}</p>

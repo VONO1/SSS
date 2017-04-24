@@ -4,6 +4,8 @@ from applications.models import Unit
 
 
 
+# Qline(admin.TabularInline):
+#     model = Unit
 
 
 
